@@ -9,23 +9,29 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 public class Grinding extends JavaPlugin {
 
+    /**
+     * The number of gravel pieces required to craft a single flint. Should be greater than 1 and less than 9.
+     */
     public static final int GRAVEL_FLINT_RATIO = 9;
+
+    /**
+     * Common prefix for log statements emitted by this plugin.
+     */
+    public static final String LOG_PREFIX = "[Grinding] ";
 
     @Override
     public void onEnable() {
-        System.out.println("Grinding enabled!");
+        System.out.println(LOG_PREFIX + "enabled!");
 
+        // Create gravel -> flint recipe
         ItemStack flintStack = new ItemStack(Material.FLINT, 1);
         ShapelessRecipe flintRecipe = new ShapelessRecipe(flintStack);
-        for(int i = 0; i < GRAVEL_FLINT_RATIO; i++) {
-            flintRecipe.addIngredient(new MaterialData(Material.GRAVEL));
-        }
-
+        flintRecipe.addIngredient(GRAVEL_FLINT_RATIO, new MaterialData(Material.GRAVEL));
         this.getServer().addRecipe(flintRecipe);
     }
 
     @Override
     public void onDisable() {
-        System.out.println("Grinding disabled!");
+        System.out.println(LOG_PREFIX + "disabled!");
     }
 }
