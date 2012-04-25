@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.lithium3141.Grinding</groupId>
     <artifactId>Grinding</artifactId>
-    <version>0.1</version>
+    <version>0.2</version>
     <name>Grinding</name>
     <description>Easily complete tiresome grinding activities.</description>
     <properties>
@@ -103,7 +103,7 @@
         <dependency>
             <groupId>org.bukkit</groupId>
             <artifactId>bukkit</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
+            <version>1.2.5-R1.0</version>
             <type>jar</type>
             <scope>compile</scope>
         </dependency>
